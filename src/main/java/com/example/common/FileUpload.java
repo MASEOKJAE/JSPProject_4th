@@ -14,7 +14,7 @@ public class FileUpload {
         String filename = "";
         int sizeLimit = 15*1024*1024;
 
-        String realPath = request.getServletContext().getRealPath("upload");
+        String realPath = request.getServletContext().getRealPath("upload/");
 
         File dir = new File(realPath);
         if(!dir.exists()) dir.mkdirs();
@@ -29,12 +29,12 @@ public class FileUpload {
 
             one = new BoardVO();
             String seq = multipartRequest.getParameter("seq");
-            String cnt = multipartRequest.getParameter("cnt");
             if(seq!=null&&!seq.equals("")) one.setSeq(Integer.parseInt(seq));
             one.setCategory(multipartRequest.getParameter("category"));
             one.setTitle(multipartRequest.getParameter("title"));
             one.setWriter(multipartRequest.getParameter("writer"));
             one.setContent(multipartRequest.getParameter("content"));
+            String cnt = multipartRequest.getParameter("cnt");
             if(cnt!=null&&!cnt.equals("")) one.setCnt(Integer.parseInt(cnt));
 
             if(seq!=null&&!seq.equals("")) {

@@ -94,7 +94,10 @@
 				<td>${u.getTitle()}</td>
 				<td>${u.getWriter()}</td>
 				<td>${u.getContent()}</td>
-				<td>${u.getPhoto()}</td>
+				<td>
+					<c:if test="${u.getPhoto() ne ''}"><br/>
+					<img src="${pageContext.request.contextPath}/upload/$${u.getPhoto()}" class="photo"></c:if>
+				</td>
 				<td>${u.getRegdate()}</td>
 				<td>
 					<a href="editform.jsp?id=${u.getSeq()}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">

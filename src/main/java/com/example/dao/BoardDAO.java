@@ -3,7 +3,6 @@ package com.example.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,7 +63,6 @@ public class BoardDAO {
             stmt.setString(5, vo.getPhoto());
             stmt.setInt(6, vo.getSeq());
 
-
             System.out.println(vo.getCategory() + "-" + vo.getTitle() + "-" + vo.getWriter() + "-" + vo.getContent()  + "-" + vo.getPhoto() + "-" + vo.getSeq());
             stmt.executeUpdate();
             return 1;
@@ -110,7 +108,7 @@ public class BoardDAO {
                 filename = rs.getString("photo");
             }
             rs.close();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println("===> JDBC로 getPhotoFilename() 기능 처리");
@@ -131,6 +129,7 @@ public class BoardDAO {
                 one.setTitle(rs.getString("title"));
                 one.setWriter(rs.getString("writer"));
                 one.setContent(rs.getString("content"));
+                one.setPhoto(rs.getString("photo"));
                 one.setRegdate(rs.getDate("regdate"));
                 one.setCnt(rs.getInt("cnt"));
                 list.add(one);

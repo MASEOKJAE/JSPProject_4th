@@ -9,13 +9,12 @@
 <html>
 <head>
     <title>file Form</title>
-    <link rel="stylesheet" href="member.css">;
+<%--    <link rel="stylesheet" href="member.css">;--%>
 </head>
 <body>
-    <form method='post' action='fileupload.jsp' enctype="multipart/form-data">
-        <input type='file' name='photo'>
-        <input type='submit' value='upload'>
+    <form method="post" action="fileupload.jsp" enctype="multipart/form-data">
+        <input type="file" name="photo">
+        <input type="submit" value="upload">
     </form>
-
 </body>
 </html>

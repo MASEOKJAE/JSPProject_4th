@@ -3,6 +3,8 @@ package com.example.bean;
 import java.util.Date;
 
 public class BoardVO {
+    public BoardVO() {
+    }
     private int seq;
     private String category;
     private String title;
