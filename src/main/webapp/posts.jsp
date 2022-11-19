@@ -96,7 +96,7 @@
 				<td>${u.getContent()}</td>
 				<td>
 					<c:if test="${u.getPhoto() ne ''}"><br/>
-					<img src="${pageContext.request.contextPath}/upload/$${u.getPhoto()}" class="photo"></c:if>
+					<img src="${pageContext.request.contextPath}/upload/${u.getPhoto()}" class="photo" width="300" height="300"></c:if>
 				</td>
 				<td>${u.getRegdate()}</td>
 				<td>

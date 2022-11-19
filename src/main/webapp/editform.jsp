@@ -30,7 +30,7 @@
 		<tr><td>Content:</td><td><textarea cols="50" rows="5" name="content">${vo.getContent()}</textarea></td></tr>
 			<td>
 				Photo:</td><td><input type="file" name="photo" value="${vo.getPhoto()}"/><c:if test="${vo.getPhoto() ne ''}"><br/>
-				<img src="${pageContext.request.contextPath}/upload/${vo.getPhoto()}" class="photo"> </c:if>
+				<img src="${pageContext.request.contextPath}/upload/${vo.getPhoto()}" class="photo" width="300" height="300"> </c:if>
 			</td>
 		<tr><td colspan="2"><input type="submit" value="Edit Post"/>
 		<input type="button" value="Cancel" onclick="history.back()"/></td></tr>
